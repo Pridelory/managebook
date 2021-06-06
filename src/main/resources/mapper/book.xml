@@ -70,5 +70,9 @@
     <select id="deleteBookListById" parameterType="String">
         DELETE FROM booklist WHERE isbn = #{isbn}
     </select>
+    <select id="updateBookList">
+        UPDATE booklist SET bname= #{booklist.bname}, publisher=#{booklist.publisher}, writer=#{booklist.writer},
+                             number=#{booklist.number}, ptime=#{booklist.ptime} WHERE ISBN = #{booklist.isbn}
+    </select>
 
 </mapper>

@@ -125,7 +125,7 @@ public class ReaderController {
     }
 
     // 修改图书信息
-    @RequestMapping(value = "/admin/books",
+    @RequestMapping(value = "/admin/updateBooks",
             method = RequestMethod.POST,
             produces = {"application/json;charset=UTF-8"})
     @ResponseBody
@@ -134,7 +134,7 @@ public class ReaderController {
         User user = (User) request.getSession().getAttribute("user");
         ProcessResult ar;
         bookList.setOperator(user.getUserId());
-        bookService.addBookList(bookList, 0);
+        bookService.updateBookList(bookList, 0);
         ar = new ProcessResult(true);
         return ar;
     }

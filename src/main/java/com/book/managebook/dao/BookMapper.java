@@ -33,6 +33,9 @@ public interface BookMapper {
     // admin
     void addBookList(@Param("booklist") BookList booklist, @Param("location") String location, @Param("state") Integer state);
 
+    // update
+    void updateBookList(@Param("booklist") BookList bookList);
+
     //管理员获取所有预约记录 注意返回值需要的是包装起来的书名和预约号还有用户名
     List<ReservationDetail> getResList();
 
@@ -40,8 +43,5 @@ public interface BookMapper {
 
     void insertBorrow(@Param("rid") int reservationId, @Param("op") int operator);
 
-
     void deleteBookListById(@Param("isbn") String isbn);
-
-
 }

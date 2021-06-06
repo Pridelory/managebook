@@ -118,44 +118,33 @@ $('#btn-add').click(function (e) {
 
 // update
 $('#btn-update').click(function (e) {
-    if (!checkadd.every(function (value) {
-            return value == true
-        })) {
-        e.preventDefault();
-        for (key in checkadd) {
-            if (!checkadd[key]) {
-                $('#add').find('input').eq(key).parent().parent().removeClass('has-success').addClass('has-error')
+    var ISBN = $('#ad-isbn-update').val();
+    var bname = $('#ad-bname-update').val();
+    var publisher = $('#ad-publisher-update').val();
+    var writer = $('#ad-writer-update').val();
+    var ptime = $('#ad-ptime-update').val();
+    var number = $('#ad-num-update').val();
+    var booklist = {
+        'isbn': ISBN, 'bname': bname,
+        'publisher': publisher, 'writer': writer,
+        'ptime': ptime, 'number': number
+    };
+    var JSONdata = JSON.stringify(booklist);
+    $.ajax({
+        type: "post",
+        url: "/managebooks/admin/updateBooks",
+        data: JSONdata,
+        dataType: "json",
+        contentType: "application/json;charset=UTF-8",
+        success: function (result) {
+            if (result['status']) {
+                alert("修改成功");
+                location.reload();
+            } else {
+                alert("修改失败");
             }
         }
-    } else {
-        var ISBN = document.getElementById("ad-isbn").value;
-        var bname = document.getElementById("ad-bname").value;
-        var publisher = document.getElementById("ad-publisher").value;
-        var writer = document.getElementById("ad-writer").value;
-        var ptime = document.getElementById("ad-ptime").value;
-        var number = document.getElementById("ad-num").value;
-        var booklist = {
-            'isbn': ISBN, 'bname': bname,
-            'publisher': publisher, 'writer': writer,
-            'ptime': ptime, 'number': number
-        };
-        var JSONdata = JSON.stringify(booklist);
-        $.ajax({
-            type: "post",
-            url: "/managebooks/admin/books",
-            data: JSONdata,
-            dataType: "json",
-            contentType: "application/json;charset=UTF-8",
-            success: function (result) {
-                if (result['status']) {
-                    alert("添加成功");
-                    location.reload();
-                } else {
-                    alert("添加失败");
-                }
-            }
-        });
-    }
+    });
 });
 
 //delete

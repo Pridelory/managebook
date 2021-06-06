@@ -41,6 +41,11 @@ public class BookServiceimpl implements BookService {
     }
 
     @Override
+    public void updateBookList(BookList bookList, int state) {
+        bookMapper.updateBookList(bookList);
+    }
+
+    @Override
     public void insertBorrow(int reservationId,int operator) {
         bookMapper.insertBorrow(reservationId,operator);
     }

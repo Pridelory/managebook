@@ -22,6 +22,9 @@ public interface BookService {
     // admin
     void addBookList(BookList booklist, int state);
 
+    // update
+    void updateBookList(BookList bookList, int state);
+
     void insertBorrow(int reservationId, int operator);
 
     List<Reservation> getResInfo();
