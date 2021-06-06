@@ -124,6 +124,21 @@ public class ReaderController {
         return ar;
     }
 
+    // 修改图书信息
+    @RequestMapping(value = "/admin/books",
+            method = RequestMethod.POST,
+            produces = {"application/json;charset=UTF-8"})
+    @ResponseBody
+    public ProcessResult updateBook(HttpServletRequest request,
+                                 @RequestBody BookList bookList) {
+        User user = (User) request.getSession().getAttribute("user");
+        ProcessResult ar;
+        bookList.setOperator(user.getUserId());
+        bookService.addBookList(bookList, 0);
+        ar = new ProcessResult(true);
+        return ar;
+    }
+
     @GetMapping(value = "/admin/reservation")
     public String processRes(
             Model model,
