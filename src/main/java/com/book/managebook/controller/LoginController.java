@@ -21,6 +21,11 @@ public class LoginController {
         return "login";
     }
 
+    @GetMapping(value = "/registration")
+    public String registration() {
+        return "registration";
+    }
+
     @GetMapping(value = "/detail")
     public String detail(Model model,
                          HttpServletRequest request) {
@@ -60,5 +65,7 @@ public class LoginController {
         model.addAttribute("user", user);
         return "detail_admin";
     }
+
+
 
 }

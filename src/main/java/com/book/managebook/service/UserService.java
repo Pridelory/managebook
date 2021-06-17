@@ -6,4 +6,6 @@ public interface UserService {
     User checkUser(User user);
 
     User checkManager(User user);
+
+    void addUser(User user);
 }

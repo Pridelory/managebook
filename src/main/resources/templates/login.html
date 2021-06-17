@@ -12,20 +12,17 @@
 <div th:include="../static/common/headbar::headbar"></div>
 <div class="login">
     <div class="container">
-        <div class="introduction">
-                YSHOP单商户B2C电商系统
-
-        </div>
         <div class="login-form">
             <form class="form-signin" action="/managebooks/detail">
                 <!--<img src="/static/lib/images/library.jpeg" alt="leader" height="300" width="300">-->
-                <h2 class="form-signin-heading" style="text-align: center">登录界面</h2>
+                <h2 class="form-signin-heading" style="text-align: center">图书管理系统</h2>
                 <label for="username" class="sr-only">用户名</label>
                 <input type="text" class="form-control" placeholder="请输入用户名" required autofocus name="username" id="username">
                 <br>
                 <label for="password" class="sr-only">密码</label>
                 <input type="password" name="password" class="form-control" placeholder="请输入密码" id="password">
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <button class="btn btn-lg btn-primary btn-block" style="background-color: lightgreen" onclick="toRegistration()">Registration</button>
             </form>
         </div>
     </div>
@@ -33,6 +30,12 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+    function toRegistration() {
+        window.location.href = "http://47.105.181.146:8082/managebooks/registration";
+    }
+</script>
 
 <style rel="stylesheet/scss" lang="scss">
     .login {
@@ -46,11 +49,7 @@
         background: #ffffff;
         width: 385px;
         padding: 25px 25px 5px 25px;
-        margin-left: 500px;
-        margin-top: 250px;
-    }
-
-    .introduction {
-        margin-top: 25px;
+        margin-left: 390px;
+        margin-top: 240px;
     }
 </style>

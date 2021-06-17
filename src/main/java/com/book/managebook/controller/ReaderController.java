@@ -2,6 +2,7 @@ package com.book.managebook.controller;
 
 import com.book.managebook.pojo.*;
 import com.book.managebook.service.BookService;
+import com.book.managebook.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,8 +16,12 @@ import java.util.List;
 @Controller
 @RequestMapping("/managebooks")
 public class ReaderController {
+
     @Autowired
     BookService bookService;
+
+    @Autowired
+    UserService userService;
 
     @GetMapping(value = "/booklist")
     public String listBookList(Model model, HttpServletRequest request) {
@@ -107,6 +112,20 @@ public class ReaderController {
         List<BookList> list = bookService.getlist();
         model.addAttribute("list", list);
         return "admin_addbook";
+    }
+
+    // 添加用户
+    @RequestMapping(value = "/admin/user",
+            method = RequestMethod.POST,
+            produces = {"application/json;charset=UTF-8"})
+    @ResponseBody
+    public ProcessResult addUser(HttpServletRequest request,
+                                 @RequestBody User submittedUser) {
+        User user = (User) request.getSession().getAttribute("user");
+        ProcessResult ar;
+        userService.addUser(submittedUser);
+        ar = new ProcessResult(true);
+        return ar;
     }
 
     // 添加图书

@@ -11,5 +11,8 @@
     <select id="checkManager" resultType="User">
         select manager_id as user_id, pass_wd, mname as user_name from manager where mname=#{user.userName} and pass_wd=#{user.passWd};
     </select>
+    <insert id="addUser">
+        INSERT INTO reader(user_name, pass_wd, rname, phone, email) VALUES (#{user.userName}, #{user.passWd}, #{user.rname}, #{user.phone}, #{user.email})
+    </insert>
 
 </mapper>

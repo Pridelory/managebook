@@ -19,4 +19,9 @@ public class UserServiceimpl implements UserService {
     public User checkManager(User user) {
         return userMapper.checkManager(user);
     }
+
+    @Override
+    public void addUser(User user) {
+        userMapper.addUser(user);
+    }
 }

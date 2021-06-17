@@ -1,0 +1,209 @@
+html, body, div, p, span, b, i, a, ul, li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.index .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.sec1 {
+    height: 100vh;
+    min-width: 1200px;
+    position: relative;
+}
+
+.sec1 .wrapper {
+    margin: 0 auto;
+    position: relative;
+}
+
+.sec1 .header {
+    width: 100%;
+    height: 60px;
+    background-color: #2489ca;
+    box-shadow: 0 0 10px #32739c;
+    position: fixed;
+}
+
+.header .logo {
+    float: left;
+    margin-left: 100px;
+    margin-top: 15px;;
+}
+
+.sec1 .header .nav {
+    height: 60px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav > li {
+    width: 130px;
+    height: 60px;
+    float: left;
+    position: relative;
+    margin-left: 30px;
+}
+
+.nav .nav-btn {
+    width: 130px;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    text-align: center;
+}
+
+.header .sub-nav li {
+    background-color: #fff;
+    height: 50px;
+    width: 130px;
+    padding: 0 10px;
+}
+
+.header .sub-nav a {
+    display: block;
+    width: 110px;
+    border-bottom: 1px solid #ddd;
+    height: 49px;
+    line-height: 49px;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.header .sub-nav a:hover {
+    color: #ff7f01;
+}
+
+.header .sub-nav {
+    width: 130px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: 60px;
+    overflow: hidden;
+    display: none;
+}
+
+.header .sub-nav li:last-child a {
+    border-bottom: none;
+}
+
+.header .nav li:hover .sub-nav {
+    display: block;
+}
+
+.sec1 .box {
+    width: 100%;
+    height: 300px;
+    background: #E7FB4A;
+    position: absolute;
+    top: 60px;
+}
+
+.sec1 #box1 {
+    background: #f2f2f2;
+    border-radius: 5px;
+}
+
+.sec1 #box2 {
+    background: #f2f2f2;
+    display: none;
+}
+
+.sec1 #box3 {
+    background: #F4FD53;
+    display: none;
+}
+
+input[type=text], input[type=password], input[type=date], input[type=number], input[type=email],input[type=url], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 15px auto 15px auto;
+    /*display: inline-block;*/
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=color] {
+    width: 10%;
+    height: 30px;
+    padding: 0;
+    margin: 20px auto 15px auto;
+}
+
+.col-25 {
+    float: left;
+    width: 35%;
+    padding: 20px;
+    margin-top: 15px;
+    text-align: right;
+}
+
+.col-75 {
+    float: right;
+    width: 65%;
+    margin-top: 6px;
+    text-align: left;
+}
+
+/* clear float */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+input[type=submit] {
+    width: 40%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.submitForm {
+    text-align: center;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.submit {
+    text-align: center;
+}
+
+
+

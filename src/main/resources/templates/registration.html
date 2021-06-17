@@ -1,0 +1,77 @@
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <!--    import the outer css file-->
+    <link rel="stylesheet" type="text/css" href="../static/lib/css/registration.css">
+</head>
+<body class="index">
+<div class="sec1">
+    <div class="wrapper">
+        <!--    box1    -->
+        <div class="box" id="box1">
+            <h1 style="text-align: center">图书馆会员注册</h1>
+            <div class="submitForm">
+                <form action="javascript:void(0)" id="submitForm">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="username">用户名</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="username" name="username" placeholder="请输入用户名" required/>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="password">密码</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="password" id="password" name="password" placeholder="请输入密码" required/>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="rname">真名</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="rname" name="rname" placeholder="请输入真名" required/>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="telephone">联系方式</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="number" id="telephone" name="telephone" placeholder="请输入联系方式" required/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="email">电子邮件</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="email" id="email" name="email" placeholder="请输入电子邮件" required/>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <input id="submit" type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<!--import the outer javascript file-->
+<script type="text/javascript" src="../static/lib/js/jquery1.42.min.js"></script>
+<script type="text/javascript" src="../static/lib/js/registration.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
